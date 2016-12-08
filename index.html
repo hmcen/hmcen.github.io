@@ -61,42 +61,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-hello" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/12/08/hello/" class="article-date">
-  <time datetime="2016-12-08T08:18:31.000Z" itemprop="datePublished">2016-12-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/08/hello/">hello</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/08/hello/" data-id="ciwg5x6rz0002m7boldfnu8cm" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/12/08/hello-world/" class="article-date">
@@ -132,69 +96,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/08/hello-world/" data-id="ciwg5x6rm0000m7bo4mj5e092" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-良医互联iOS编码规范" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/23/良医互联iOS编码规范/" class="article-date">
-  <time datetime="2016-09-23T10:50:45.000Z" itemprop="datePublished">2016-09-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="良医互联iOS编码规范"><a href="#良医互联iOS编码规范" class="headerlink" title="良医互联iOS编码规范"></a>良医互联iOS编码规范</h1><p>  规范规范搞起 </p>
-<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
-<li><a href="#Object-C 编码规范">Object-C 编码规范</a></li>
-<li><a href="#View层代码规范">View层编码规范</a></li>
-<li><a href="#业务层编码规范">业务层编码规范</a></li>
-</ul>
-<h2 id="Object-C-编码规范"><a href="#Object-C-编码规范" class="headerlink" title="Object-C 编码规范"></a>Object-C 编码规范</h2><h4 id="函数的书写规范"><a href="#函数的书写规范" class="headerlink" title="函数的书写规范"></a>函数的书写规范</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- (void)writeVideoFrameWithData:(NSData *)frameData timeStamp:(int)timeStamp &#123;</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li><code>-</code>与返回值<code>void</code>之间应该有一个空格，函数名之后应该有一个空格，大括号<code>{</code>在同一行。</li>
-<li>函数名首字母小写。</li>
-<li>如果一个函数有特别多的参数或者名称很长，应该将其按照<code>:</code>来对齐分行显示。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">- (id)initWithModel:(IPCModle)model</div><div class="line">        connectType:(IPCConnectType)connectType</div><div class="line">         resolution:(IPCResolution)resolution</div><div class="line">           authName:(NSString *)authName</div><div class="line">           password:(NSString *)password；</div></pre></td></tr></table></figure>
-<ul>
-<li>函数与函数之间应该用空行隔开。</li>
-</ul>
-<h4 id="数据库方法的书写规范"><a href="#数据库方法的书写规范" class="headerlink" title="数据库方法的书写规范"></a>数据库方法的书写规范</h4><ul>
-<li>数据库查询语句如果返回数组（多个对象），方法命名中需要加上s，或者List。</li>
-<li>数据库表名用驼峰方式书写，不要全部大写，严禁无规则大小写混杂。</li>
-<li>数据库名的简写一定要和表名称匹配，如planTemplate表，简称可以写成pt，不能写成zt，对拷贝的sql语句尤其要注意。</li>
-<li>数据库语句一定要格式化，衡量标准：出现连表、子查询的一律都要格式化，格式化语句左侧对齐。select语句select，from，where，group by，order by在一条垂直线上，而查询内容、连表条件(on …) 、查询条件都缩进4格。update和delete语句如果是简单语句可放在一行，如果出现子查询和多个查询条件等影响阅读理解情况，同样要遵循上述格式。</li>
-<li></li>
-</ul>
-<h2 id="View层编码规范"><a href="#View层编码规范" class="headerlink" title="View层编码规范"></a>View层编码规范</h2><p>viewcontroller 代码结构</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">#pragma mark - View Life cycle</div><div class="line">...</div><div class="line">#pragma mark - TableViewDelegate, TableViewDataSource</div><div class="line">...</div><div class="line">#pragma mark - Other delegate</div><div class="line">...</div><div class="line">#pragma mark - Event Response</div><div class="line">...</div><div class="line">#pragma mark - Private methods</div><div class="line">...</div><div class="line">#pragma mark - Getters and setters</div></pre></td></tr></table></figure>
-<ul>
-<li>所有view life cycle的方法必须调用super方法。</li>
-<li>每块区域加上 <code>#pragma mark -</code> 便于区分和查找。</li>
-<li>view相关的成员属性用lazy loading 的方式初始化，不要全堆放在<code>viewDidLoad</code>中</li>
-</ul>
-<h2 id="暂无归类"><a href="#暂无归类" class="headerlink" title="暂无归类"></a>暂无归类</h2><ul>
-<li><code>NSNotificationCenter</code>注册监听之后<strong>必须</strong>同时在对应位置写上取消监听。</li>
-</ul>
-<p>​       <strong>viewcontroller生命周期</strong>:  在<code>viewDidLoad</code>里注册，<code>dealloc</code>中取消；</p>
-<p>​       <strong>viewcontroller展示周期</strong>:  在<code>viewWillAppear</code>里注册，<code>viewWillDisappear</code>中取消；</p>
-<p>​       若无特殊情况，建议在展示周期内做。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/23/良医互联iOS编码规范/" data-id="ciwg5x6ru0001m7boz9jssn86" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/12/08/hello-world/" data-id="ciwg5ylqs0000n0botlsdbmbg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -221,7 +123,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
     </div>
   </div>
 
@@ -234,15 +136,7 @@
       <ul>
         
           <li>
-            <a href="/2016/12/08/hello/">hello</a>
-          </li>
-        
-          <li>
             <a href="/2016/12/08/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2016/09/23/良医互联iOS编码规范/">(no title)</a>
           </li>
         
       </ul>
